@@ -399,27 +399,47 @@ main {
 
 .site-disclaimer {
   border-bottom: 1px solid var(--border);
-  padding: 1rem 0;
+  padding: 0.45rem 1rem;
   background: rgba(15, 20, 25, 0.95);
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.disclaimer-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem 1.25rem;
+  width: 100%;
 }
 
 .site-disclaimer .disclaimer-title {
-  margin: 0 0 0.5rem;
+  flex: 0 0 auto;
+  margin: 0;
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: inherit;
   font-weight: 600;
+  white-space: nowrap;
 }
 
-.site-disclaimer p {
-  margin: 0 0 0.75rem;
-  max-width: 72ch;
-  line-height: 1.55;
+.site-disclaimer .disclaimer-text {
+  flex: 1 1 45%;
+  margin: 0;
 }
 
 .site-disclaimer .disclaimer-note {
-  margin-bottom: 0;
-  font-size: 0.8rem;
+  flex: 1 1 25%;
+  margin: 0;
   opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .disclaimer-inner {
+    flex-wrap: wrap;
+  }
+
+  .site-disclaimer .disclaimer-text,
+  .site-disclaimer .disclaimer-note {
+    flex-basis: 100%;
+  }
 }
